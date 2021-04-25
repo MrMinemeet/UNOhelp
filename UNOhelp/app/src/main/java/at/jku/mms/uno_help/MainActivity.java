@@ -26,32 +26,47 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Check if android version is higher than 23
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // Check if permissions have been granted
             if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                // Ask for permissions
                 permissionsGranted = false;
                 requestPermissions(new String[] {Manifest.permission.CAMERA}, RC_PERMISSION);
             } else {
+                // Permissions where already granted
                 permissionsGranted = true;
             }
         } else {
+            // No need to ask for permissions explicit
             permissionsGranted = true;
         }
 
-        CodeScannerView scannerView = findViewById(R.id.scanner_view);
-        codeScanner = new CodeScanner(this, scannerView);
-        codeScanner.setScanMode(ScanMode.CONTINUOUS);
-        codeScanner.setDecodeCallback(new DecodeCallback() {
-            @Override
-            public void onDecoded(@NonNull final Result result) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        TextView tv = findViewById(R.id.text_result);
-                        tv.setText(result.getText());
-                    }
-                });
-            }
-        });
+        if(permissionsGranted) {
+            // Try to get CodeScannerView from activity_main
+            CodeScannerView scannerView = findViewById(R.id.scanner_view);
+
+            // Setup code scanner
+            codeScanner = new CodeScanner(this, scannerView);
+
+            // Keeps scanning after a code was found
+            codeScanner.setScanMode(ScanMode.CONTINUOUS);
+
+            // Set callback when a code was read/decoded
+            codeScanner.setDecodeCallback(new DecodeCallback() {
+                @Override
+                public void onDecoded(@NonNull final Result result) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Set decoded text into TextView
+                            TextView tv = findViewById(R.id.text_result);
+                            tv.setText(result.getText());
+                        }
+                    });
+                }
+            });
+        }
     }
 
     @Override
@@ -64,18 +79,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         codeScanner.releaseResources();
         super.onPause();
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        if (requestCode == RC_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                permissionsGranted = true;
-                codeScanner.startPreview();
-            } else {
-                permissionsGranted = false;
-            }
-        }
     }
 }

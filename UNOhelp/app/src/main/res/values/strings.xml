@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UNOhelp</string>
+    <string name="scan_something">Scan something…</string>
 </resources>

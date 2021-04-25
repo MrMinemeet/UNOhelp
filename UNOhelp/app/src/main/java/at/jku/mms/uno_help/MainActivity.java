@@ -7,13 +7,12 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
+import com.budiyev.android.codescanner.ScanMode;
 import com.google.zxing.Result;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         CodeScannerView scannerView = findViewById(R.id.scanner_view);
         codeScanner = new CodeScanner(this, scannerView);
+        codeScanner.setScanMode(ScanMode.CONTINUOUS);
         codeScanner.setDecodeCallback(new DecodeCallback() {
             @Override
             public void onDecoded(@NonNull final Result result) {
@@ -50,12 +50,6 @@ public class MainActivity extends AppCompatActivity {
                         tv.setText(result.getText());
                     }
                 });
-            }
-        });
-        scannerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                codeScanner.startPreview();
             }
         });
     }

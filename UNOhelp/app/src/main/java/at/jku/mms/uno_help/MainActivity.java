@@ -89,6 +89,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public ArrayList<Card> getPossibleCards(Card currentTopCard){
-        
+        return null;
     }
 }

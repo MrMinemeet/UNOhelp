@@ -15,6 +15,8 @@ import com.budiyev.android.codescanner.DecodeCallback;
 import com.budiyev.android.codescanner.ScanMode;
 import com.google.zxing.Result;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private CodeScanner codeScanner;
@@ -79,5 +81,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         codeScanner.releaseResources();
         super.onPause();
+    }
+
+
+    public ArrayList<Card> getPossibleCards(Card currentTopCard){
+        
     }
 }

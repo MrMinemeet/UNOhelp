@@ -85,6 +85,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     public ArrayList<Card> getPossibleCards(Card currentTopCard){
-        
+        ArrayList<Card> possibleCards = new ArrayList<>();
+
+        // Game Mechanics
+        // Add cards to list which are possible
+
+
+        return possibleCards;
+
+
     }
 }

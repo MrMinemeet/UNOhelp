@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_PERMISSION = 10;
     private boolean permissionsGranted;
 
+    private static final Player player = new Player();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+
     }
 
     @Override

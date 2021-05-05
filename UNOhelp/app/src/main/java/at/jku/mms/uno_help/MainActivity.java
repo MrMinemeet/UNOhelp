@@ -7,6 +7,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.budiyev.android.codescanner.CodeScanner;
@@ -71,7 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+<<<<<<< Updated upstream
         player.setName(this);
+=======
+
+>>>>>>> Stashed changes
     }
 
     @Override
@@ -88,14 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public ArrayList<Card> getPossibleCards(Card currentTopCard){
-        ArrayList<Card> possibleCards = new ArrayList<>();
-
-        // Game Mechanics
-        // Add cards to list which are possible
-
-
-        return possibleCards;
-
-
+        
     }
 }

@@ -12,7 +12,7 @@ public class Player {
     private String name;
     private ArrayList<Card> currentDeck;
 
-    public void setName(Context c){
+    public void setName(Context c) {
         final EditText taskEditText = new EditText(c);
         AlertDialog dialog = new AlertDialog.Builder(c)
                 .setTitle("Add a new player")
@@ -28,4 +28,5 @@ public class Player {
                 .setNegativeButton("Cancel", null)
                 .create();
         dialog.show();
+    }
 }

@@ -72,11 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-<<<<<<< Updated upstream
         player.setName(this);
-=======
-
->>>>>>> Stashed changes
     }
 
     @Override

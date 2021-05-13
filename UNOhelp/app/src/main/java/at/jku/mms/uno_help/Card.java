@@ -1,8 +1,8 @@
 package at.jku.mms.uno_help;
 
 public class Card {
-    /* Eigenschaften für Karte
-        Bsp: Enun - Kartentyp
+    /* Properties of cards
+        Bsp: Enum - cardType, color
              String name - QR code
      */
 

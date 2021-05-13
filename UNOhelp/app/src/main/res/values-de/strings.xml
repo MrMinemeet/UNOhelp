@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">UNOhelp</string>
     <string name="scan_something">Scanne etwas…</string>
+    <string name="player_name_title">Spielername</string>
+    <string name="player_name_text">Wie lautet der Name des Spielers?</string>
+    <string name="submit">Bestätigen</string>
+    <string name="cancel">Abbrechen</string>
 </resources>

@@ -30,12 +30,9 @@ public class Player {
                 .setTitle(R.string.player_name_title)
                 .setMessage(R.string.player_name_text)
                 .setView(taskEditText)
-                .setPositiveButton(R.string.submit, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String name = String.valueOf(taskEditText.getText());
-                        Toast.makeText(c, "Name: " + name, Toast.LENGTH_SHORT).show();
-                    }
+                .setPositiveButton(R.string.submit, (dialog1, which) -> {
+                    String name = String.valueOf(taskEditText.getText());
+                    Toast.makeText(c, "Name: " + name, Toast.LENGTH_SHORT).show();
                 })
                 .setNegativeButton(R.string.cancel, null)
                 .create();

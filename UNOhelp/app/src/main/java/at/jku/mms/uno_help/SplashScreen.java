@@ -38,15 +38,12 @@ public class SplashScreen extends AppCompatActivity {
             // Permissions got granted
 
             // Basically start a timer that executes this code block after 3000ms
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    // Start new Intent for switching to main Activity
-                    Intent i = new Intent(SplashScreen.this, MainActivity.class);
-                    startActivity(i);
+            new Handler().postDelayed(() -> {
+                // Start new Intent for switching to main Activity
+                Intent i = new Intent(SplashScreen.this, MainActivity.class);
+                startActivity(i);
 
-                    finish();
-                }
+                finish();
             }, 3000);
         }
     }

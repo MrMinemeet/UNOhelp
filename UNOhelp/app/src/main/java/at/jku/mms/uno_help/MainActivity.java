@@ -38,19 +38,14 @@ public class MainActivity extends AppCompatActivity {
         codeScanner.setScanMode(ScanMode.CONTINUOUS);
 
         // Set callback when a code was read/decoded
-        codeScanner.setDecodeCallback(new DecodeCallback() {
+        codeScanner.setDecodeCallback(result -> runOnUiThread(new Runnable() {
             @Override
-            public void onDecoded(@NonNull final Result result) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Set decoded text into TextView
-                        TextView tv = findViewById(R.id.text_result);
-                        tv.setText(result.getText());
-                    }
-                });
+            public void run() {
+                // Set decoded text into TextView
+                TextView tv = findViewById(R.id.text_result);
+                tv.setText(result.getText());
             }
-        });
+        }));
     }
 
     @Override
@@ -67,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public ArrayList<Card> getPossibleCards(Card currentTopCard){
+        // TODO: Add Game Logic
+
+
+
+
         return null;
     }
 }

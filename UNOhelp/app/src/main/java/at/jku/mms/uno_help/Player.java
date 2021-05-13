@@ -7,10 +7,22 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Player {
     private String name;
-    private ArrayList<Card> currentDeck;
+    private ArrayList<Card> currentDeck = new ArrayList<>();
+
+    // Constructors
+    public Player() {}
+    public Player(String name) {
+        this.name = name;
+    }
+    public Player(Card... deck) {
+        currentDeck = new ArrayList<>(Arrays.asList(deck));
+    }
+
+
 
     public void setName(Context c) {
         final EditText taskEditText = new EditText(c);

@@ -1,13 +1,20 @@
 package at.jku.mms.uno_help;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.ScanMode;
+
+import java.util.ArrayList;
+
+import at.jku.mms.uno_help.Cards.Card;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,17 +36,36 @@ public class MainActivity extends AppCompatActivity {
         // Setup code scanner
         codeScanner = new CodeScanner(this, scannerView);
 
-        // Keeps scanning after a code was found
-        codeScanner.setScanMode(ScanMode.CONTINUOUS);
-
         // Set callback when a code was read/decoded
-        codeScanner.setDecodeCallback(result -> runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                // Set decoded text into TextView
-                TextView tv = findViewById(R.id.text_result);
-                tv.setText(result.getText());
-            }
+        codeScanner.setDecodeCallback(result -> runOnUiThread(() -> {
+            // Set decoded text into TextView
+            String qrCodeIdentifier = result.getText();
+            Card card = Card.createFromQRCode(qrCodeIdentifier);
+
+            // Create dialog in which the user has to confirm if this is the correct card
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+            String message = R.string.dialog_is_correct_card + "\n" + card.toString();
+            alertDialogBuilder.setMessage(message);
+
+            // Player confirmed card
+            alertDialogBuilder.setPositiveButton(R.string.submit,
+                (DialogInterface.OnClickListener) (arg0, arg1) -> {
+                    // Add Card to player deck
+                    player.addToDeck(card);
+                    Toast.makeText(MainActivity.this, R.string.card_was_added, Toast.LENGTH_SHORT).show();
+                    codeScanner.startPreview();
+                });
+
+            // Player declined card
+            alertDialogBuilder.setNegativeButton(R.string.cancel,
+                (DialogInterface.OnClickListener) (arg0, arg1) -> {
+                    // Don't add card to deck but notify player
+                    Toast.makeText(MainActivity.this, R.string.card_not_added, Toast.LENGTH_SHORT).show();
+                    codeScanner.startPreview();
+                });
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
         }));
     }
 

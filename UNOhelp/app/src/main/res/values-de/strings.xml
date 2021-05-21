@@ -6,4 +6,7 @@
     <string name="player_name_text">Wie lautet der Name des Spielers?</string>
     <string name="submit">Bestätigen</string>
     <string name="cancel">Abbrechen</string>
+    <string name="dialog_is_correct_card">Ist dies die richtige Karte?</string>
+    <string name="card_not_added">Karte wurde dem Deck nicht hinzugefügt</string>
+    <string name="card_was_added">Karte wurde dem Deck hinzugefügt</string>
 </resources>

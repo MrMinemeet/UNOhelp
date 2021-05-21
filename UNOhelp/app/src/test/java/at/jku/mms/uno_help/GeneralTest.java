@@ -16,7 +16,7 @@ public class GeneralTest {
     private Player player = new Player();
 
     @Test
-    public void testcreateFromQRCode() {
+    public void testCreateFromQRCode() {
         Card blue5 = Card.createFromQRCode("blue5");
         Card blue9 = Card.createFromQRCode("blue9");
         Card red1 = Card.createFromQRCode("red1");

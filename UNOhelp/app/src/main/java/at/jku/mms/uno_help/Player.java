@@ -52,4 +52,8 @@ public class Player {
     public void setCurrentDeck(List<Card> newDeck) {
         this.currentDeck = new ArrayList<>(newDeck);
     }
+
+    public void addToDeck(Card newCard){
+        currentDeck.add(newCard);
+    }
 }

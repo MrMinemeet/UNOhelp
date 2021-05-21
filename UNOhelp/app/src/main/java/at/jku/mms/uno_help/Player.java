@@ -25,7 +25,10 @@ public class Player {
     }
 
 
-
+    /**
+     * Creates dialog for entering username
+     * @param c Current context
+     */
     public void setName(Context c) {
         final EditText taskEditText = new EditText(c);
         AlertDialog dialog = new AlertDialog.Builder(c)

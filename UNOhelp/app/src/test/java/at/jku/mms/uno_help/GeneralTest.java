@@ -7,6 +7,7 @@ import java.util.List;
 
 import at.jku.mms.uno_help.Cards.Card;
 import at.jku.mms.uno_help.Cards.CardColor;
+import at.jku.mms.uno_help.Cards.CardType;
 
 import static org.junit.Assert.*;
 
@@ -23,10 +24,15 @@ public class GeneralTest {
         Card colorSwitch = Card.createFromQRCode("color_switch");
 
         assertEquals(CardColor.BLUE, blue5.getCardColor());
+        assertEquals(CardType.FIVE, blue5.getCardType());
         assertEquals(CardColor.BLUE, blue9.getCardColor());
+        assertEquals(CardType.NINE, blue9.getCardType());
         assertEquals(CardColor.RED, red1.getCardColor());
+        assertEquals(CardType.ONE, red1.getCardType());
         assertEquals(CardColor.GREEN, green5.getCardColor());
+        assertEquals(CardType.FIVE, green5.getCardType());
         assertEquals(CardColor.SPECIAL, colorSwitch.getCardColor());
+        assertEquals(CardType.COLOR_SWITCH, colorSwitch.getCardType());
     }
     
 

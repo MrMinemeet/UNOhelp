@@ -11,12 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
     private static final int RC_PERMISSION = 10;
-    private boolean permissionsGranted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+        boolean permissionsGranted;
 
         // Check if android version is higher than 23
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

@@ -17,9 +17,11 @@ public class Player {
 
     // Constructors
     public Player() {}
+
     public Player(String name) {
         this.name = name;
     }
+
     public Player(Card... deck) {
         currentDeck = new ArrayList<>(Arrays.asList(deck));
     }

@@ -3,16 +3,11 @@ package at.jku.mms.uno_help;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
-import com.budiyev.android.codescanner.DecodeCallback;
 import com.budiyev.android.codescanner.ScanMode;
-import com.google.zxing.Result;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,15 +53,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         codeScanner.releaseResources();
         super.onPause();
-    }
-
-
-    public ArrayList<Card> getPossibleCards(Card currentTopCard){
-        // TODO: Add Game Logic
-
-
-
-
-        return null;
     }
 }

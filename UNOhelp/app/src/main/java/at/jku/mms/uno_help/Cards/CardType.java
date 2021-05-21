@@ -2,6 +2,7 @@ package at.jku.mms.uno_help.Cards;
 
 public enum CardType {
     // Card Types that have a color
+    ZERO,
     ONE,
     TWO,
     THREE,

@@ -2,12 +2,14 @@ package at.jku.mms.uno_help;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import at.jku.mms.uno_help.Cards.Card;
 
 public class Player {
     private String name;
@@ -37,5 +39,12 @@ public class Player {
                 .setNegativeButton(R.string.cancel, null)
                 .create();
         dialog.show();
+    }
+
+    public ArrayList<Card> getCurrentDeck() {
+        return currentDeck;
+    }
+    public void setCurrentDeck(List<Card> newDeck) {
+        this.currentDeck = new ArrayList<>(newDeck);
     }
 }

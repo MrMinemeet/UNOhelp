@@ -2,7 +2,6 @@ package at.jku.mms.uno_help;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -10,9 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
-import com.budiyev.android.codescanner.ScanMode;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import at.jku.mms.uno_help.Cards.Card;
 
@@ -44,23 +42,24 @@ public class MainActivity extends AppCompatActivity {
 
             // Create dialog in which the user has to confirm if this is the correct card
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-            String message = R.string.dialog_is_correct_card + "\n" + card.toString();
+            String message = R.string.current_card_is + "\n" + card.toString();
             alertDialogBuilder.setMessage(message);
 
             // Player confirmed card
-            alertDialogBuilder.setPositiveButton(R.string.submit,
+            alertDialogBuilder.setPositiveButton(R.string.show_possible_cards,
                 (DialogInterface.OnClickListener) (arg0, arg1) -> {
-                    // Add Card to player deck
-                    player.addToDeck(card);
-                    Toast.makeText(MainActivity.this, R.string.card_was_added, Toast.LENGTH_SHORT).show();
+                    // Player selected the option to show possible cards
+                    List<Card> possibleCards = GameLogic.getPossibleCards(player, card);
+                    // TODO: Make selection where player sees all possible cards and then selects the one he/she lays down
                     codeScanner.startPreview();
                 });
 
             // Player declined card
-            alertDialogBuilder.setNegativeButton(R.string.cancel,
+            alertDialogBuilder.setNegativeButton(R.string.add_card_to_deck,
                 (DialogInterface.OnClickListener) (arg0, arg1) -> {
-                    // Don't add card to deck but notify player
-                    Toast.makeText(MainActivity.this, R.string.card_not_added, Toast.LENGTH_SHORT).show();
+                    // Player selected the option to add card to deck
+                    player.addToDeck(card);
+                    Toast.makeText(MainActivity.this, R.string.added_card_to_deck, Toast.LENGTH_SHORT).show();
                     codeScanner.startPreview();
                 });
 

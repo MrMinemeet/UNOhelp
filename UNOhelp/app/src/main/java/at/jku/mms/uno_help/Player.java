@@ -53,6 +53,10 @@ public class Player {
         this.currentDeck = new ArrayList<>(newDeck);
     }
 
+    /**
+     * Adds given card to players deck
+     * @param newCard Card that gets added
+     */
     public void addToDeck(Card newCard){
         currentDeck.add(newCard);
     }

@@ -1,6 +1,7 @@
 package at.jku.mms.uno_help;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -51,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
                     // Player selected the option to show possible cards
                     List<Card> possibleCards = GameLogic.getPossibleCards(player, card);
                     // TODO: Make selection where player sees all possible cards and then selects the one he/she lays down
+                    Intent i = new Intent(MainActivity.this, possibleCardsDisplay.class);
+                    startActivity(i);
                     codeScanner.startPreview();
+
+
                 });
 
             // Player declined card

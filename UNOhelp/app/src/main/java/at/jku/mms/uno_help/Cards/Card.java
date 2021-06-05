@@ -14,7 +14,7 @@ public class Card {
     private final CardColor cardColor;
     private int cardImage = 0;
 
-    public Card(CardType type, CardColor color) {
+    private Card(CardType type, CardColor color) {
         this.cardType = type;
         this.cardColor = color;
 

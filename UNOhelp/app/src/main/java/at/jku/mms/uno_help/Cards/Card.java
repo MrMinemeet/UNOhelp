@@ -1,5 +1,7 @@
 package at.jku.mms.uno_help.Cards;
 
+import android.graphics.drawable.Drawable;
+
 public class Card {
     /* Properties of cards
         E.g.: Enum - cardType, color
@@ -8,10 +10,14 @@ public class Card {
 
     private final CardType cardType;
     private final CardColor cardColor;
+    private final Drawable cardImage;
 
     public Card(CardType type, CardColor color) {
         this.cardType = type;
         this.cardColor = color;
+
+        // TODO: set cardImage to correct R.drawable.… according to type and color
+        cardImage = null;
     }
 
     @Override
@@ -27,6 +33,7 @@ public class Card {
     public String toString() {
         return "Card Color: " + this.getCardColor() + " - Card Type: " + this.getCardType();
     }
+
 
     // Getter
     public CardType getCardType() {

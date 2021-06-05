@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private CodeScanner codeScanner;
 
-    private static final Player player = new Player();
+    public static final Player player = new Player();
+    public static Card topCard = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             // Set decoded text into TextView
             String qrCodeIdentifier = result.getText();
             Card card = Card.createFromQRCode(qrCodeIdentifier);
+            topCard = card;
 
             // Create dialog in which the user has to confirm if this is the correct card
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);

@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             String message = R.string.current_card_is + "\n" + card.toString();
             alertDialogBuilder.setMessage(message);
 
-            // Player confirmed card
+            // Shows player dialog to select what to do with scanned card
             alertDialogBuilder.setPositiveButton(R.string.show_possible_cards,
                 (DialogInterface.OnClickListener) (arg0, arg1) -> {
                     // Player selected the option to show possible cards

@@ -29,7 +29,6 @@ public class possibleCardsDisplay extends AppCompatActivity {
 
         TableLayout tl = findViewById(R.id.tableLayout);
 
-
         int countCard = 0;
         TableRow tr = new TableRow(this);
 

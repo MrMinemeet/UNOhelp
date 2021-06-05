@@ -53,12 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 (DialogInterface.OnClickListener) (arg0, arg1) -> {
                     // Player selected the option to show possible cards
                     List<Card> possibleCards = GameLogic.getPossibleCards(player, card);
-                    // TODO: Make selection where player sees all possible cards and then selects the one he/she lays down
                     Intent i = new Intent(MainActivity.this, possibleCardsDisplay.class);
                     startActivity(i);
                     codeScanner.startPreview();
-
-
                 });
 
             // Player declined card

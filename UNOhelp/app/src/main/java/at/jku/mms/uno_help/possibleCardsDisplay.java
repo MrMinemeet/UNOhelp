@@ -29,12 +29,26 @@ public class possibleCardsDisplay extends AppCompatActivity {
 
         TableLayout tl = findViewById(R.id.tableLayout);
 
+
+        int countCard = 0;
         TableRow tr = new TableRow(this);
-        tl.addView(tr);
 
-        ImageButton ib = new ImageButton(this);
-        ib.setImageResource(R.drawable.blue_0_card);
+        //go through all possible Cards
+        for(Card card : possibleCards) {
+            //check if row is full (only three cards a allowed in a row)
+            if(countCard % 3 == 0) {
+                //produce a new row
+                tr = new TableRow(this);
+                tl.addView(tr);
+            }
 
-        tr.addView(ib);
+            //produce new button
+            ImageButton ib = new ImageButton(this);
+            ib.setImageResource(card.getCardImage());
+
+            //add new button to the row
+            tr.addView(ib);
+            countCard++;
+        }
     }
 }

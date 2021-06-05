@@ -2,6 +2,8 @@ package at.jku.mms.uno_help.Cards;
 
 import android.graphics.drawable.Drawable;
 
+import at.jku.mms.uno_help.R;
+
 public class Card {
     /* Properties of cards
         E.g.: Enum - cardType, color
@@ -10,14 +12,150 @@ public class Card {
 
     private final CardType cardType;
     private final CardColor cardColor;
-    private final Drawable cardImage;
+    private int cardImage = 0;
 
     public Card(CardType type, CardColor color) {
         this.cardType = type;
         this.cardColor = color;
 
-        // TODO: set cardImage to correct R.drawable.… according to type and color
-        cardImage = null;
+        //sets cardImage depending on cardType and cardColor
+        if(cardType == CardType.ZERO) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_0_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_0_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_0_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_0_card;
+            }
+        } else if(cardType == CardType.ONE) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_1_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_1_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_1_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_1_card;
+            }
+        } else if(cardType == CardType.TWO) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_2_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_2_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_2_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_2_card;
+            }
+        } else if(cardType == CardType.THREE) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_3_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_3_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_3_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_3_card;
+            }
+        } else if(cardType == CardType.FOUR) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_4_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_4_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_4_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_4_card;
+            }
+        } else if(cardType == CardType.FIVE) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_5_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_5_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_5_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_5_card;
+            }
+        } else if(cardType == CardType.SIX) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_6_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_6_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_6_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_6_card;
+            }
+        } else if(cardType == CardType.SEVEN) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_7_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_7_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_7_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_7_card;
+            }
+        } else if(cardType == CardType.EIGHT) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_8_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_8_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_8_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_8_card;
+            }
+        } else if(cardType == CardType.NINE) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_9_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_9_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_9_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_9_card;
+            }
+        } else if(cardType == CardType.DIRECTION_SWITCH) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_change_direction_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_change_direction_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_change_direction_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_change_direction_card;
+            }
+        } else if(cardType == CardType.TAKE_TWO) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_plus2_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_plus2_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_plus2_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_plus2_card;
+            }
+        } else if(cardType == CardType.PLAYER_LOCK) {
+            if(cardColor == CardColor.BLUE) {
+                cardImage = R.drawable.blue_expose_card;
+            } else if (cardColor == CardColor.GREEN) {
+                cardImage = R.drawable.green_expose_card;
+            } else if(cardColor == CardColor.RED) {
+                cardImage = R.drawable.red_expose_card;
+            } else if(cardColor == CardColor.YELLOW) {
+                cardImage = R.drawable.yellow_expose_card;
+            }
+        } else if(cardType == CardType.COLOR_SWITCH) {
+            cardImage = R.drawable.wish_card;
+        } else if(cardType == CardType.TAKE_FOUR_COLOR_SWITCH) {
+            cardImage = R.drawable.wish_plus4_card;
+        } else {
+            cardImage = 0;
+        }
     }
 
     @Override
@@ -44,6 +182,10 @@ public class Card {
         return cardColor;
     }
 
+    public int getCardImage() {
+        return cardImage;
+    }
+
     /**
      * Creates a card object from QR-Code Identifier
      * @param qrCodeIdentifier Identifying string to card. E.g "red1" for 1 in color red
@@ -51,7 +193,6 @@ public class Card {
      * @throws IllegalArgumentException Exception is thrown if card type could not be identified
      */
     public static Card createFromQRCode(String qrCodeIdentifier) throws IllegalArgumentException {
-        // TODO: Create cases for all cards
 
         CardColor cardColor = null;
         CardType cardType = null;

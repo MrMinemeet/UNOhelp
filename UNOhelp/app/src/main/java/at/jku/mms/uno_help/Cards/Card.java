@@ -1,7 +1,5 @@
 package at.jku.mms.uno_help.Cards;
 
-import android.graphics.drawable.Drawable;
-
 import at.jku.mms.uno_help.R;
 
 public class Card {

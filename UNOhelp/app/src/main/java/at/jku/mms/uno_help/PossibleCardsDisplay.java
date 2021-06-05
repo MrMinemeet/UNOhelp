@@ -15,7 +15,7 @@ import java.util.List;
 
 import at.jku.mms.uno_help.Cards.Card;
 
-public class possibleCardsDisplay extends AppCompatActivity {
+public class PossibleCardsDisplay extends AppCompatActivity {
 
     private Player player;
 

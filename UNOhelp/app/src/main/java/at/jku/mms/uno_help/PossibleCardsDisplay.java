@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -44,6 +45,13 @@ public class PossibleCardsDisplay extends AppCompatActivity {
             //produce new button
             ImageButton ib = new ImageButton(this);
             ib.setImageResource(card.getCardImage());
+
+            ib.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // TODO: Call method for deleting card
+                }
+            });
 
             //add new button to the row
             tr.addView(ib);

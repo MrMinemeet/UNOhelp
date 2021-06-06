@@ -42,7 +42,7 @@ public class PossibleCardsDisplay extends AppCompatActivity {
                 tl.addView(tr);
             }
 
-            //produce new button
+            // Produce new button
             ImageButton ib = new ImageButton(this);
             ib.setTag(card);
             ib.setImageResource(card.getCardImage());
@@ -51,6 +51,7 @@ public class PossibleCardsDisplay extends AppCompatActivity {
             ib.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // Call method for deleting card
                     Card c = (Card)v.getTag();
                     player.removeFromDeck(c);
                     finishActivity(0);

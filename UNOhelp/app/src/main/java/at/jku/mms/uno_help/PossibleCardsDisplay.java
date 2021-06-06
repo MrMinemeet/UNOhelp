@@ -44,12 +44,15 @@ public class PossibleCardsDisplay extends AppCompatActivity {
 
             //produce new button
             ImageButton ib = new ImageButton(this);
+            ib.setTag(card);
             ib.setImageResource(card.getCardImage());
 
             ib.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // TODO: Call method for deleting card
+                    Card c = (Card)v.getTag();
+                    player.removeFromDeck(c);
                 }
             });
 

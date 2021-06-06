@@ -41,7 +41,7 @@ public class GeneralTest {
         player = new Player();
         List<Card> deck = new ArrayList<>();
 
-        // TODO: Use "createFromQRCode" instead of constructor
+        //Use "createFromQRCode" instead of constructor
         Card blue5 = Card.createFromQRCode("blue5");
         Card blue9 = Card.createFromQRCode("blue9");
         Card red1 = Card.createFromQRCode("red1");

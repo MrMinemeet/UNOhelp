@@ -9,7 +9,6 @@ import at.jku.mms.uno_help.Cards.CardColor;
 
 public class GameLogic {
     public static List<Card> getPossibleCards(Player player, Card currentTopCard){
-        // TODO: Add Game Logic
 
         // List that holds possible cards
         List<Card> possibleCards = new ArrayList<>();

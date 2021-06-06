@@ -60,4 +60,19 @@ public class Player {
     public void addToDeck(Card newCard){
         currentDeck.add(newCard);
     }
+
+    /**
+     *Remove card from the deck
+     * @param card card which should be removed
+     * @return true if card was found, else false
+     */
+    public boolean removeFromDeck(Card card) {
+        for (Card c : currentDeck) {
+            if(c == card) {
+                currentDeck.remove(c);
+                return true;
+            }
+        }
+        return false;
+    }
 }

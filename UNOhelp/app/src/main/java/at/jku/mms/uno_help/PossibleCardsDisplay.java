@@ -47,12 +47,13 @@ public class PossibleCardsDisplay extends AppCompatActivity {
             ib.setTag(card);
             ib.setImageResource(card.getCardImage());
 
+            //remove card from deck
             ib.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // TODO: Call method for deleting card
                     Card c = (Card)v.getTag();
                     player.removeFromDeck(c);
+                    finishActivity(0);
                 }
             });
 

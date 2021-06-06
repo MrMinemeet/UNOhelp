@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     // Player selected the option to show possible cards
                     List<Card> possibleCards = GameLogic.getPossibleCards(player, card);
                     Intent i = new Intent(MainActivity.this, PossibleCardsDisplay.class);
-                    startActivity(i);
+                    startActivityForResult(i, 0);
                     codeScanner.startPreview();
                 });
 

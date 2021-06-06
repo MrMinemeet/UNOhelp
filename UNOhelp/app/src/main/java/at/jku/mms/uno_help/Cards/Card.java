@@ -11,10 +11,12 @@ public class Card {
     private final CardType cardType;
     private final CardColor cardColor;
     private int cardImage = 0;
+    private final String cardText;
 
-    private Card(CardType type, CardColor color) {
+    private Card(CardType type, CardColor color, String cardText) {
         this.cardType = type;
         this.cardColor = color;
+        this.cardText = cardText;
 
         //sets cardImage depending on cardType and cardColor
         if(cardType == CardType.ZERO) {
@@ -246,6 +248,6 @@ public class Card {
             throw new IllegalArgumentException("Card type could not be identified");
         }
 
-        return new Card(cardType, cardColor);
+        return new Card(cardType, cardColor, qrCodeIdentifier);
     }
 }

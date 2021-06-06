@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     codeScanner.startPreview();
                 });
 
-            // Player declined card
+            // Player adds card to deck
             alertDialogBuilder.setNegativeButton(R.string.add_card_to_deck,
                 (DialogInterface.OnClickListener) (arg0, arg1) -> {
                     // Player selected the option to add card to deck

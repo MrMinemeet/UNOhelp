@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         // User has some possible cards
                         Intent i = new Intent(MainActivity.this, PossibleCardsDisplay.class);
-                        startActivityForResult(i, 0);
+                        startActivity(i);
                     }
                     // Reactivate scanning
                     codeScanner.startPreview();

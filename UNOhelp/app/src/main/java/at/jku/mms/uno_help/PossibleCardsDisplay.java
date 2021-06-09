@@ -33,9 +33,9 @@ public class PossibleCardsDisplay extends AppCompatActivity {
         int countCard = 0;
         TableRow tr = new TableRow(this);
 
-        //go through all possible Cards
+        // Go through all possible Cards
         for(Card card : possibleCards) {
-            //check if row is full (only three cards a allowed in a row)
+            // Check if row is full (only three cards a allowed in a row)
             if(countCard % 3 == 0) {
                 //produce a new row
                 tr = new TableRow(this);
@@ -47,18 +47,15 @@ public class PossibleCardsDisplay extends AppCompatActivity {
             ib.setTag(card);
             ib.setImageResource(card.getCardImage());
 
-            //remove card from deck
-            ib.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Call method for deleting card
-                    Card c = (Card)v.getTag();
-                    player.removeFromDeck(c);
-                    finishActivity(0);
-                }
+            // Remove card from deck
+            ib.setOnClickListener(v -> {
+                // Call method for deleting card
+                Card c = (Card)v.getTag();
+                player.removeFromDeck(c);
+                finish();
             });
 
-            //add new button to the row
+            // Add new button to the row
             tr.addView(ib);
             countCard++;
         }

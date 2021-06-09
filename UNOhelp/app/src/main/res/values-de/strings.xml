@@ -10,4 +10,5 @@
     <string name="show_possible_cards">Zeige mögliche Karten</string>
     <string name="current_card_is">Aktuelle Karte:</string>
     <string name="added_card_to_deck">Karte wurde dem Deck hinzugefügt</string>
+    <string name="no_possible_cards">Du hast keine passenden Karte! Bitte ziehe eine.</string>
 </resources>

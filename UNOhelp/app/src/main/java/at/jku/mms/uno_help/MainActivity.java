@@ -52,9 +52,17 @@ public class MainActivity extends AppCompatActivity {
             alertDialogBuilder.setPositiveButton(R.string.show_possible_cards,
                 (DialogInterface.OnClickListener) (arg0, arg1) -> {
                     // Player selected the option to show possible cards
+
                     List<Card> possibleCards = GameLogic.getPossibleCards(player, card);
-                    Intent i = new Intent(MainActivity.this, PossibleCardsDisplay.class);
-                    startActivityForResult(i, 0);
+                    if(possibleCards.size() < 1) {
+                        // No possible cards where found in deck
+                        Toast.makeText(this, R.string.no_possible_cards, Toast.LENGTH_LONG).show();
+                    } else {
+                        // User has some possible cards
+                        Intent i = new Intent(MainActivity.this, PossibleCardsDisplay.class);
+                        startActivityForResult(i, 0);
+                    }
+                    // Reactivate scanning
                     codeScanner.startPreview();
                 });
 

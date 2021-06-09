@@ -9,4 +9,5 @@
     <string name="show_possible_cards">Show possible cards</string>
     <string name="current_card_is">Current card is:</string>
     <string name="added_card_to_deck">Card was added to the deck</string>
+    <string name="no_possible_cards">You don\'t have a card that fits! Please draw one.</string>
 </resources>

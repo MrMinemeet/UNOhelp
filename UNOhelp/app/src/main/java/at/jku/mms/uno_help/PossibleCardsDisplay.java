@@ -2,15 +2,10 @@ package at.jku.mms.uno_help;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Bitmap;
-import android.media.Image;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
 
